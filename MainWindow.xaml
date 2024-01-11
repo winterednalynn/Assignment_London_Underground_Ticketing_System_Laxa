@@ -1,0 +1,113 @@
+﻿<Window
+    x:Class="Assignment_London_Underground_Ticketing_System.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:Assignment_London_Underground_Ticketing_System"
+    mc:Ignorable="d"
+    Title="MainWindow"
+    Height="650"
+    Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="Auto" />
+            <RowDefinition
+                Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- Original Riders ListView -->
+        <ListView
+            Grid.Row="0"
+            Name="lvRiders"
+            Margin="10"
+            Height="250">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Header="Unique Number"
+                        Width="120"
+                        DisplayMemberBinding="{Binding UniqueNumber}" />
+                    <GridViewColumn
+                        Header="Station On"
+                        Width="120"
+                        DisplayMemberBinding="{Binding StationOn}" />
+                    <GridViewColumn
+                        Header="Station Off"
+                        Width="120"
+                        DisplayMemberBinding="{Binding StationOff}" />
+                    <GridViewColumn
+                        Header="Active"
+                        Width="60"
+                        DisplayMemberBinding="{Binding IsActive}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <!-- Search Section -->
+        <StackPanel
+            Grid.Row="1"
+            Orientation="Horizontal"
+            Margin="10">
+            <Label
+                Content="Search Station:"
+                VerticalAlignment="Center" />
+            <ComboBox
+                Name="cmbSearchStation"
+                Width="120"
+                Margin="5,0" />
+            <Button
+                Content="Search"
+                Width="100"
+                Click="OnSearchStation"
+                Margin="5,0" />
+            <Label
+                Content="Active Travelers:"
+                VerticalAlignment="Center"
+                Margin="20,0,0,0" />
+            <Button
+                Content="Show Active"
+                Width="100"
+                Click="OnShowActive"
+                Margin="5,0" />
+
+            <!-- New Clear Button -->
+            <Button
+                Content="Clear List"
+                Width="100"
+                Click="OnClearList"
+                Margin="5,0" />
+        </StackPanel>
+
+        <!-- Filtered Riders ListView -->
+        <ListView
+            Grid.Row="2"
+            Name="lvFilteredRiders"
+            Margin="10"
+            Height="250">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn
+                        Header="Unique Number"
+                        Width="120"
+                        DisplayMemberBinding="{Binding UniqueNumber}" />
+                    <GridViewColumn
+                        Header="Station On"
+                        Width="120"
+                        DisplayMemberBinding="{Binding StationOn}" />
+                    <GridViewColumn
+                        Header="Station Off"
+                        Width="120"
+                        DisplayMemberBinding="{Binding StationOff}" />
+                    <GridViewColumn
+                        Header="Active"
+                        Width="60"
+                        DisplayMemberBinding="{Binding IsActive}" />
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</Window>
