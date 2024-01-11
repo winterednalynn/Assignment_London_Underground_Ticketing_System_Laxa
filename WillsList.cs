@@ -9,7 +9,7 @@ namespace Assignment_London_Underground_Ticketing_System
 {
     public class WillsList<T> : IEnumerable<T>
     {
-
+        // Do not alter this code in any way
             private T[] _items;
             private int _count;
             private const int InitialCapacity = 100;

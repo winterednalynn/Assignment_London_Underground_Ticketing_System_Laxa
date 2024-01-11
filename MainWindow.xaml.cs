@@ -22,6 +22,8 @@ namespace Assignment_London_Underground_Ticketing_System
         // Example YourList<Ride> Riders
         public WillsList<Rider> Riders;
 
+        int numberOfRiders = 10; // Changes this to something higher than 100 to check your list is working
+
         public MainWindow()
         {
             InitializeComponent();
@@ -30,22 +32,23 @@ namespace Assignment_London_Underground_Ticketing_System
 
 
             lvRiders.ItemsSource = Riders;
-        }
-
-
+        } // MainWindow
 
         private void OnSearchStation(object sender, RoutedEventArgs e)
         {
             var searchStation = cmbSearchStation.SelectedIndex;
-            
+
             // Enter code here to show all riders who started there ride from the selected station
 
-        }
+            // lvRiders.ItemsSource = YourReturnedResults;
+        } // OnSearchStation
 
         private void OnShowActive(object sender, RoutedEventArgs e)
         {
             // Enter code here to display all riders currently riding the underground
-        }
+
+            // lvRiders.ItemsSource = YourReturnedResults;
+        } // OnShowActive
 
         private void OnClearList(object sender, RoutedEventArgs e)
         {
@@ -60,7 +63,7 @@ namespace Assignment_London_Underground_Ticketing_System
             Random rnd = new Random();
             HashSet<int> usedNumbers = new HashSet<int>();
 
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < numberOfRiders; i++)
             {
                 int uniqueNumber;
                 do
