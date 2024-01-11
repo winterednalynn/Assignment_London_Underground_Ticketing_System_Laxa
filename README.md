@@ -1,6 +1,6 @@
 # Assignment: London Underground Commute
 
-## Introdution
+## Introduction
 The London underground recently hired some guy named, WILL, to help build their new ticketing system to hand the number of Riders that ride the Tube everyday. Unfortunetly he was lazy. Not programmer lazy, just lazy. And he built his code so that if more than 100 customers ride in a day, the whole system went down.
 
 YOU are here to fix his shoddy work. You will build your own custom list to replace his list, `WillsList`. What an ego. Your list should expand as it hits nears capacity so that you don't hit capacity at 100 customers.
