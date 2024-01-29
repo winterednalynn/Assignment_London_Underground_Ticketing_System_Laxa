@@ -12,6 +12,9 @@ using static System.Collections.Specialized.BitVector32;
 
 namespace Assignment_London_Underground_Ticketing_System
 {
+  //Edna Lynn Laxa // Assignment: London Underground Commute // 1.16.24 
+
+
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
@@ -20,7 +23,7 @@ namespace Assignment_London_Underground_Ticketing_System
         // Replace "WillsList" with your Custom List name in 2 places.
         // 1. Replace here
         // Example YourList<Ride> Riders
-        public WillsList<Rider> Riders;
+        public EdnalynnList<Rider> Riders; // My list is active . 
 
         int numberOfRiders = 10; // Changes this to something higher than 100 to check your list is working
 
@@ -40,14 +43,15 @@ namespace Assignment_London_Underground_Ticketing_System
 
             // Enter code here to show all riders who started there ride from the selected station
 
-            // lvRiders.ItemsSource = YourReturnedResults;
+            lvriders.itemssource = yourreturnedresults; // Unsure
+
         } // OnSearchStation
 
         private void OnShowActive(object sender, RoutedEventArgs e)
         {
             // Enter code here to display all riders currently riding the underground
 
-            // lvRiders.ItemsSource = YourReturnedResults;
+             lvriders.itemssource = yourreturnedresults; // unsure 
         } // OnShowActive
 
         private void OnClearList(object sender, RoutedEventArgs e)
@@ -59,7 +63,7 @@ namespace Assignment_London_Underground_Ticketing_System
         {
             // 2. And here
             // Ex Riders = new YourList<Rider>();
-            Riders = new WillsList<Rider>();
+            Riders = new EdnalynnList<Rider>();
             Random rnd = new Random();
             HashSet<int> usedNumbers = new HashSet<int>();
 
