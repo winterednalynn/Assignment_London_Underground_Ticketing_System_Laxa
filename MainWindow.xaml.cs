@@ -39,19 +39,40 @@ namespace Assignment_London_Underground_Ticketing_System
 
         private void OnSearchStation(object sender, RoutedEventArgs e)
         {
-            var searchStation = cmbSearchStation.SelectedIndex;
 
-            // Enter code here to show all riders who started there ride from the selected station
+            var searchStation = (Station)cmbSearchStation.SelectedItem;
 
-            lvriders.itemssource = yourreturnedresults; // Unsure
+            if (searchStation != null)
+            {
+                List<Rider> filteredRiders = new List<Rider>();
 
-        } // OnSearchStation
+                foreach (Rider rider in Riders)
+                {
+                    if (rider.StationOn == searchStation)
+                    {
+                        filteredRiders.Add(rider);
+                    }
+                }
 
+
+                lvRiders.ItemsSource = filteredRiders;
+
+            } // OnSearchStation
+        }
         private void OnShowActive(object sender, RoutedEventArgs e)
         {
-            // Enter code here to display all riders currently riding the underground
+                List<Rider> activeRiders = new List<Rider>();
 
-             lvriders.itemssource = yourreturnedresults; // unsure 
+                foreach (Rider rider in Riders)
+                {
+                    if (rider.StationOff == Station.Active)
+                    {
+                        activeRiders.Add(rider);
+                    }
+                }
+
+                lvRiders.ItemsSource = activeRiders;
+
         } // OnShowActive
 
         private void OnClearList(object sender, RoutedEventArgs e)
